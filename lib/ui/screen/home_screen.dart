@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:test_2/data/test/initial_data.dart';
 
 import 'package:test_2/ui/widget/location_setting_button.dart';
 import 'package:test_2/ui/widget/time_widget.dart';
-import 'package:test_2/ui/widget/time_setting_button.dart';
 
-import '../../data/test/initial_data.dart';
-
-//locationSettingButton line 60에서
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});

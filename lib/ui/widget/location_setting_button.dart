@@ -26,17 +26,6 @@ class LocationSettingButton extends StatefulWidget {
   State<LocationSettingButton> createState() => _LocationSettingButtonState();
 }
 class _LocationSettingButtonState extends State<LocationSettingButton> {
-  // testText (String title, String text){
-  //   return Column(
-  //     children: [
-  //       Text(title,
-  //       style: const TextStyle(
-  //         fontSize:20,
-  //         fontWeight:FontWeight.bold)
-  //       ),
-  //     ],
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
