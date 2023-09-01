@@ -85,7 +85,9 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                     ),
                   ],
                 ),
-                const Padding(padding: EdgeInsets.fromLTRB(0, 0, 40, 0)),
+                const SizedBox(
+                  width: 40,
+                ),
                 const SizedBox(
                   width: 10,
                 ),
