@@ -22,10 +22,24 @@ class LocationSettingButton extends StatefulWidget {
       shownHumidity: InitialData().humidity,
       graphData: InitialData().graphData);
 
+
+
+
   @override
   State<LocationSettingButton> createState() => _LocationSettingButtonState();
 }
 class _LocationSettingButtonState extends State<LocationSettingButton> {
+  @override
+  void initState(){
+    super.initState();
+    reload();
+  }
+  void reload()async{
+    var temp = await getWeatherItems();
+    setState(() {
+      widget.weatherItems = temp as GetWeatherItemsModel;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,10 +55,8 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                     SizedBox(height: 20),
                     InkWell(
                       onTap: () {
-                        setState(()async{
-                          widget.weatherItems = await getWeatherItems();
-                          print(widget.weatherItems);
-                        });
+                        reload();
+                        print(widget.weatherItems.graphData);
                       },
                       child: Container(
                           decoration: BoxDecoration(
