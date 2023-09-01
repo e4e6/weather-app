@@ -20,7 +20,7 @@ class LocationSettingButton extends StatefulWidget {
       shownWindSpeed: InitialData().windSpeed,
       shownTemperature: InitialData().temperature,
       shownHumidity: InitialData().humidity,
-      graphData: InitialData().graphData);
+      );
 
 
 
