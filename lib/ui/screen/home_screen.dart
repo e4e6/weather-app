@@ -16,26 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int shownYear = InitialData().year;
-  int shownMonth = InitialData().month;
-  int shownDay = InitialData().day;
-  int shownHour = InitialData().hour;
-  int shownMinute = InitialData().minute;
-
-  void _updateDataTimeSettingButton(
-      {required int year,
-      required int month,
-      required int day,
-      required int hour,
-      required int min}) {
-    setState(() {
-      shownYear = year;
-      shownMonth = month;
-      shownDay = day;
-      shownHour = hour;
-      shownMinute = min;
-    });
-  }
+  var shownTimeData = InitialData();
 
   @override
   Widget build(BuildContext context) {
@@ -47,20 +28,16 @@ class _HomeScreenState extends State<HomeScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              TimeSettingButton(
-                  updateDataTimeSettingButton: _updateDataTimeSettingButton),
-              const Padding(padding: EdgeInsets.all(10)),
               Center(
                   child: Column(
                 children: [
                   Text(
-                    '$shownYear , $shownMonth , $shownDay',
+                    '${shownTimeData.year} , ${shownTimeData.month} , ${shownTimeData.day}',
                     style: const TextStyle(fontSize: 25, color: Colors.black),
                   ),
-                  TimeWidget(hour: shownHour, min: shownMinute)
+                  TimeWidget(hour: shownTimeData.hour, min: shownTimeData.minute)
                 ],
               )),
-              const Padding(padding: EdgeInsets.all(30)),
             ],
           ),
           const SizedBox(height: 5),
