@@ -50,20 +50,11 @@ Future<GetWeatherItemsModel> getWeatherItems() async{
   Map<String, dynamic> jsonData = await getCurrentWeatherApiJson(myLatitude: myLatitude, myLongitude: myLongitude);
   Map<String, dynamic> jsonDataForGraph = await get5DaysWeatherApiJson(myLatitude: myLatitude, myLongitude: myLongitude);
 
-  for (int i = 0; i < 10; i++) {
-    graphData.add(double.parse(
-        (jsonDataForGraph['list'][i]['main']['temp'] - 273.15)
-            .toStringAsFixed(1)));
-    print(graphData);
-
     return GetWeatherItemsModel(
         shownLocation: jsonData['name'],
         weatherIcon: jsonData['weather'][0]['icon'],
         weatherWord: jsonData['weather'][0]['main'],
         shownWindSpeed: jsonData['wind']['speed'],
         shownTemperature: double.parse((jsonData['main']['temp'] - 273.15).toStringAsFixed(1)),
-        shownHumidity: jsonData['main']['humidity'],
-        graphData: graphData);
-  }
-  throw('error at getWeatherItems');
+        shownHumidity: jsonData['main']['humidity'],);
 }

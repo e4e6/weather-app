@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class TemperatureGraphWidget extends StatefulWidget {
   TemperatureGraphWidget({super.key, required this.graphData});
-
   var graphData = [];
-
   @override
   State<TemperatureGraphWidget> createState() => _TemperatureGraphWidgetState();
 }
 
 class _TemperatureGraphWidgetState extends State<TemperatureGraphWidget> {
+
+
   @override
   Widget build(BuildContext context) {
     return Container(

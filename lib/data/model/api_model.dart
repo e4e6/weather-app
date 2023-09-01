@@ -20,7 +20,6 @@ class GetWeatherItemsModel with _$GetWeatherItemsModel {
   required double shownWindSpeed,
   required double shownTemperature,
   required int shownHumidity,
-  required List<double> graphData
   })=_GetWeatherItemsModel;
   factory GetWeatherItemsModel.fromJson(Map<String, Object?> json) => _$GetWeatherItemsModelFromJson(json);
 }

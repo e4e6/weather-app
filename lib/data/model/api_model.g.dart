@@ -29,9 +29,6 @@ _$_GetWeatherItemsModel _$$_GetWeatherItemsModelFromJson(
       shownWindSpeed: (json['shownWindSpeed'] as num).toDouble(),
       shownTemperature: (json['shownTemperature'] as num).toDouble(),
       shownHumidity: json['shownHumidity'] as int,
-      graphData: (json['graphData'] as List<dynamic>)
-          .map((e) => (e as num).toDouble())
-          .toList(),
     );
 
 Map<String, dynamic> _$$_GetWeatherItemsModelToJson(
@@ -43,5 +40,4 @@ Map<String, dynamic> _$$_GetWeatherItemsModelToJson(
       'shownWindSpeed': instance.shownWindSpeed,
       'shownTemperature': instance.shownTemperature,
       'shownHumidity': instance.shownHumidity,
-      'graphData': instance.graphData,
     };

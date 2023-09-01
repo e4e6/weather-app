@@ -7,9 +7,6 @@ void main() {
 
 class Main extends StatelessWidget {
   const Main({super.key});
-//afssfs
-  //asfsfaasf
-  //asfasfasaf
   @override
   Widget build(BuildContext context) => MaterialApp(home: HomeScreen());
 }

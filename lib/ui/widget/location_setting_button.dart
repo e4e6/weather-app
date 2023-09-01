@@ -56,7 +56,6 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                     InkWell(
                       onTap: () {
                         reload();
-                        print(widget.weatherItems.graphData);
                       },
                       child: Container(
                           decoration: BoxDecoration(
@@ -98,9 +97,7 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
             ),
           ],
         ),
-        const SizedBox(height: 20),
-        TemperatureGraphWidget(graphData: widget.weatherItems.graphData),
-        const SizedBox(height: 20),
+        const SizedBox(height: 50),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

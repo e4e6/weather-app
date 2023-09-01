@@ -189,7 +189,6 @@ mixin _$GetWeatherItemsModel {
   double get shownWindSpeed => throw _privateConstructorUsedError;
   double get shownTemperature => throw _privateConstructorUsedError;
   int get shownHumidity => throw _privateConstructorUsedError;
-  List<double> get graphData => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -209,8 +208,7 @@ abstract class $GetWeatherItemsModelCopyWith<$Res> {
       String weatherWord,
       double shownWindSpeed,
       double shownTemperature,
-      int shownHumidity,
-      List<double> graphData});
+      int shownHumidity});
 }
 
 /// @nodoc
@@ -233,7 +231,6 @@ class _$GetWeatherItemsModelCopyWithImpl<$Res,
     Object? shownWindSpeed = null,
     Object? shownTemperature = null,
     Object? shownHumidity = null,
-    Object? graphData = null,
   }) {
     return _then(_value.copyWith(
       shownLocation: null == shownLocation
@@ -260,10 +257,6 @@ class _$GetWeatherItemsModelCopyWithImpl<$Res,
           ? _value.shownHumidity
           : shownHumidity // ignore: cast_nullable_to_non_nullable
               as int,
-      graphData: null == graphData
-          ? _value.graphData
-          : graphData // ignore: cast_nullable_to_non_nullable
-              as List<double>,
     ) as $Val);
   }
 }
@@ -282,8 +275,7 @@ abstract class _$$_GetWeatherItemsModelCopyWith<$Res>
       String weatherWord,
       double shownWindSpeed,
       double shownTemperature,
-      int shownHumidity,
-      List<double> graphData});
+      int shownHumidity});
 }
 
 /// @nodoc
@@ -303,7 +295,6 @@ class __$$_GetWeatherItemsModelCopyWithImpl<$Res>
     Object? shownWindSpeed = null,
     Object? shownTemperature = null,
     Object? shownHumidity = null,
-    Object? graphData = null,
   }) {
     return _then(_$_GetWeatherItemsModel(
       shownLocation: null == shownLocation
@@ -330,10 +321,6 @@ class __$$_GetWeatherItemsModelCopyWithImpl<$Res>
           ? _value.shownHumidity
           : shownHumidity // ignore: cast_nullable_to_non_nullable
               as int,
-      graphData: null == graphData
-          ? _value._graphData
-          : graphData // ignore: cast_nullable_to_non_nullable
-              as List<double>,
     ));
   }
 }
@@ -347,9 +334,7 @@ class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
       required this.weatherWord,
       required this.shownWindSpeed,
       required this.shownTemperature,
-      required this.shownHumidity,
-      required final List<double> graphData})
-      : _graphData = graphData;
+      required this.shownHumidity});
 
   factory _$_GetWeatherItemsModel.fromJson(Map<String, dynamic> json) =>
       _$$_GetWeatherItemsModelFromJson(json);
@@ -366,17 +351,10 @@ class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
   final double shownTemperature;
   @override
   final int shownHumidity;
-  final List<double> _graphData;
-  @override
-  List<double> get graphData {
-    if (_graphData is EqualUnmodifiableListView) return _graphData;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_graphData);
-  }
 
   @override
   String toString() {
-    return 'GetWeatherItemsModel(shownLocation: $shownLocation, weatherIcon: $weatherIcon, weatherWord: $weatherWord, shownWindSpeed: $shownWindSpeed, shownTemperature: $shownTemperature, shownHumidity: $shownHumidity, graphData: $graphData)';
+    return 'GetWeatherItemsModel(shownLocation: $shownLocation, weatherIcon: $weatherIcon, weatherWord: $weatherWord, shownWindSpeed: $shownWindSpeed, shownTemperature: $shownTemperature, shownHumidity: $shownHumidity)';
   }
 
   @override
@@ -395,22 +373,13 @@ class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
             (identical(other.shownTemperature, shownTemperature) ||
                 other.shownTemperature == shownTemperature) &&
             (identical(other.shownHumidity, shownHumidity) ||
-                other.shownHumidity == shownHumidity) &&
-            const DeepCollectionEquality()
-                .equals(other._graphData, _graphData));
+                other.shownHumidity == shownHumidity));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      shownLocation,
-      weatherIcon,
-      weatherWord,
-      shownWindSpeed,
-      shownTemperature,
-      shownHumidity,
-      const DeepCollectionEquality().hash(_graphData));
+  int get hashCode => Object.hash(runtimeType, shownLocation, weatherIcon,
+      weatherWord, shownWindSpeed, shownTemperature, shownHumidity);
 
   @JsonKey(ignore: true)
   @override
@@ -434,8 +403,7 @@ abstract class _GetWeatherItemsModel implements GetWeatherItemsModel {
       required final String weatherWord,
       required final double shownWindSpeed,
       required final double shownTemperature,
-      required final int shownHumidity,
-      required final List<double> graphData}) = _$_GetWeatherItemsModel;
+      required final int shownHumidity}) = _$_GetWeatherItemsModel;
 
   factory _GetWeatherItemsModel.fromJson(Map<String, dynamic> json) =
       _$_GetWeatherItemsModel.fromJson;
@@ -452,8 +420,6 @@ abstract class _GetWeatherItemsModel implements GetWeatherItemsModel {
   double get shownTemperature;
   @override
   int get shownHumidity;
-  @override
-  List<double> get graphData;
   @override
   @JsonKey(ignore: true)
   _$$_GetWeatherItemsModelCopyWith<_$_GetWeatherItemsModel> get copyWith =>
