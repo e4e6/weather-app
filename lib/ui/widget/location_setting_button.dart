@@ -109,6 +109,7 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
             HumidityWidget(humidity: widget.weatherItems.shownHumidity),
           ],
         ),
+        //dka
         const SizedBox(height: 20),
       ],
     );
