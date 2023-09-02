@@ -22,7 +22,6 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 80.h,),
             Container(
               color:Colors.blue[200],
               child: SingleChildScrollView(
