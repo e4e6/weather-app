@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WeatherWidget extends StatefulWidget {
   WeatherWidget(
@@ -6,34 +7,32 @@ class WeatherWidget extends StatefulWidget {
 
   String weatherWord = '';
   String weatherIcon = '';
+
   @override
   State<WeatherWidget> createState() => _WeatherWidgetState();
 }
 
 class _WeatherWidgetState extends State<WeatherWidget> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: 140.w,
       child: Column(
         children: [
           SizedBox(
-              width: 100,
-              height: 100,
+              width: 140.w,
               child: widget.weatherIcon != '0000'
                   ? Image.network(
+                height: 120.h,
                       'https://openweathermap.org/img/wn/${widget.weatherIcon}@2x.png',
                     )
-                  : const Icon(
-                      Icons.question_mark,
-                      size: 100,
-                    )),
-
-          Padding(padding: EdgeInsets.all(10)),
-
+                  : Icon(Icons.question_mark,
+              size:120.h)
+          ),
+          SizedBox(height: 10.h,),
           Text(
             '${widget.weatherWord}',
-            style: const TextStyle(fontSize: 30),
+            style: TextStyle(fontSize: 30.w),
           ),
         ],
       ),

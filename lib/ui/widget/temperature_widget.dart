@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TemperatureWidget extends StatefulWidget {
   TemperatureWidget({super.key, required this.temperature});
@@ -14,7 +15,7 @@ class _TemperatureWidgetState extends State<TemperatureWidget> {
   Widget build(BuildContext context) {
     return Text(
       '${widget.temperature}°',
-      style: TextStyle(fontSize: 70, color: Colors.black),
+      style: TextStyle(fontSize: 60.w, color: Colors.black),
     );
   }
 }

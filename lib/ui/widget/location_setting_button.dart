@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_2/data/api/api.dart';
 import 'package:test_2/data/model/api_model.dart';
 
 import 'package:test_2/data/test/initial_data.dart';
-import 'package:test_2/ui/widget/temperature_graph_widget.dart';
 import 'package:test_2/ui/widget/temperature_widget.dart';
 import 'package:test_2/ui/widget/weather_widget.dart';
 import 'package:test_2/ui/widget/wind_speed_widget.dart';
@@ -52,44 +52,41 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                 Column(
                   children: [
                     TemperatureWidget(temperature: widget.weatherItems.shownTemperature),
-                    SizedBox(height: 20),
+                    SizedBox(height: 5.h),
                     InkWell(
                       onTap: () {
                         reload();
                       },
                       child: Container(
+
+                          width: 140.w,
+                          height: 60.h,
+
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
+                            borderRadius: BorderRadius.circular(50.r),
                             color: Colors.grey[350],
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                            child: Row(
-                              children: [
-                                Text(
-                                  '${widget.weatherItems.shownLocation}',
-                                  style: TextStyle(fontSize: 25),
-                                ),
-                                const SizedBox(
-                                  height: 6,
-                                  width: 6,
-                                ),
-                                const Icon(
-                                  Icons.location_on,
-                                  size: 30,
-                                ),
-                              ],
-                            ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              // SizedBox(
+                              // height: 10.h,
+                              // width: 20.w,
+                              // ),
+                              Text(
+                                '${widget.weatherItems.shownLocation}',
+                                style: TextStyle(fontSize: 25.sp),
+                              ),
+                              Icon(
+                                Icons.location_on,
+                                size:30.sp
+                              ),
+                            ],
                           )),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  width: 40,
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
+                SizedBox(height: 20.h,width: 20.w),
                 WeatherWidget(
                     weatherWord: '${widget.weatherItems.weatherWord}',
                     weatherIcon: '${widget.weatherItems.weatherIcon}'),
@@ -97,17 +94,17 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
             ),
           ],
         ),
-        const SizedBox(height: 50),
+        SizedBox(height: 50.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             WindSpeedWidget(windSpeed: widget.weatherItems.shownWindSpeed),
-            const Padding(padding: EdgeInsets.all(10)),
+            SizedBox(height: 20.h,width: 20.w),
             HumidityWidget(humidity: widget.weatherItems.shownHumidity),
           ],
         ),
 
-        const SizedBox(height: 20),
+        SizedBox(height: 20.h),
       ],
     );
   }
