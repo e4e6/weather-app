@@ -4,11 +4,11 @@ import 'package:test_2/data/api/api.dart';
 import 'package:test_2/data/model/api_model.dart';
 
 import 'package:test_2/data/test/initial_data.dart';
-import 'package:test_2/ui/widget/temperature_widget.dart';
-import 'package:test_2/ui/widget/weather_widget.dart';
-import 'package:test_2/ui/widget/wind_speed_widget.dart';
+import 'package:test_2/ui/widget/present_temperature_text.dart';
+import 'package:test_2/ui/widget/present_weather_icon_and_text.dart';
+import 'package:test_2/ui/widget/present_wind_speed_container.dart';
 
-import 'humidity_widget.dart';
+import 'present_humidity_container.dart';
 
 class LocationSettingButton extends StatefulWidget {
   LocationSettingButton({super.key});

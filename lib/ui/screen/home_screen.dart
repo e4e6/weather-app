@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_2/data/test/initial_data.dart';
 
-import 'package:test_2/ui/widget/location_setting_button.dart';
-import 'package:test_2/ui/widget/time_widget.dart';
-
+import 'package:test_2/ui/widget/present_location_setting_button.dart';
+import 'package:test_2/ui/widget/present_time_text.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -20,12 +19,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              color:Colors.blue[200],
-              child: SingleChildScrollView(
-      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          color: Colors.blue[200],
+          child: SingleChildScrollView(
+            child: Column(
               children: [
                 SizedBox(height: 10.h),
                 Row(
@@ -36,9 +35,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         Text(
                           '${shownTimeData.year} , ${shownTimeData.month} , ${shownTimeData.day}',
-                          style: TextStyle(fontSize: 25.sp, color: Colors.black),
+                          style:
+                              TextStyle(fontSize: 25.sp, color: Colors.black),
                         ),
-                        TimeWidget(hour: shownTimeData.hour, minute: shownTimeData.minute)
+                        TimeWidget(
+                            hour: shownTimeData.hour,
+                            minute: shownTimeData.minute)
                       ],
                     )),
                   ],
@@ -51,10 +53,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 ),
               ],
-      ),
-    ),
             ),
-          ],
-        ));
+          ),
+        ),
+      ],
+    ));
   }
 }

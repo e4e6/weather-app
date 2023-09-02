@@ -23,9 +23,8 @@ class _HumidityWidgetState extends State<HumidityWidget> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.water_drop,
-            size:30.sp),
-            SizedBox(width:5.w),
+            Icon(Icons.water_drop, size: 30.sp),
+            SizedBox(width: 5.w),
             Text('${widget.humidity}%',
                 style: TextStyle(fontSize: 30.sp, color: Colors.black)),
           ],
