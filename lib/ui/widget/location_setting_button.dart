@@ -52,18 +52,18 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                 Column(
                   children: [
                     TemperatureWidget(temperature: widget.weatherItems.shownTemperature),
-                    SizedBox(height: 5.h),
+                    SizedBox(height: 10.h),
                     InkWell(
                       onTap: () {
                         reload();
                       },
                       child: Container(
 
-                          width: 140.w,
-                          height: 60.h,
+                          width: 140.sp,
+                          height: 40.sp,
 
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50.r),
+                            borderRadius: BorderRadius.circular(50).w,
                             color: Colors.grey[350],
                           ),
                           child: Row(
