@@ -11,7 +11,7 @@ Future<GetMyCurrentLocationModel> getMyCurrentLocation() async {
     return GetMyCurrentLocationModel(
         myLatitude: position.latitude, myLongitude: position.longitude);
   } catch (e) {
-    throw new FormatException(); // <?> throw 가 하는일
+    return Future.error(e);
   }
 }
 
@@ -24,9 +24,7 @@ Future<Map<String, dynamic>> getCurrentWeatherApiJson(
   if (response.statusCode == 200) {
     Map<String, dynamic> jsonData = response.data;
     return jsonData;
-  } else {
-    throw ('error: ${response.statusCode}');
-  }
+  }throw ('statusCode: ${response.statusCode}');
 }
 
 Future<Map<String, dynamic>> get5DaysWeatherApiJson(
@@ -36,9 +34,7 @@ Future<Map<String, dynamic>> get5DaysWeatherApiJson(
   if (response.statusCode == 200) {
     Map<String, dynamic> jsonData = response.data;
     return jsonData;
-  } else {
-    throw ('error: ${response.statusCode}');
-  }
+  } throw ('statusCode: ${response.statusCode}');
 }
 
 Future<GetWeatherItemsModel> getWeatherItems() async{
