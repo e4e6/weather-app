@@ -12,8 +12,8 @@ class GetMyCurrentLocationModel with _$GetMyCurrentLocationModel {
 }
 
 @freezed
-class GetWeatherItemsModel with _$GetWeatherItemsModel {
-  factory GetWeatherItemsModel ({
+class GetWeatherDataVariablesModel with _$GetWeatherItemsModel {
+  factory GetWeatherDataVariablesModel ({
   required String shownLocation,
   required String weatherIcon,
   required String weatherWord,
@@ -21,5 +21,5 @@ class GetWeatherItemsModel with _$GetWeatherItemsModel {
   required double shownTemperature,
   required int shownHumidity,
   })=_GetWeatherItemsModel;
-  factory GetWeatherItemsModel.fromJson(Map<String, Object?> json) => _$GetWeatherItemsModelFromJson(json);
+  factory GetWeatherDataVariablesModel.fromJson(Map<String, Object?> json) => _$GetWeatherItemsModelFromJson(json);
 }

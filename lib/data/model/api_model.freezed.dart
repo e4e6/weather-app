@@ -177,7 +177,7 @@ abstract class _GetMyCurrentLocationModel implements GetMyCurrentLocationModel {
       get copyWith => throw _privateConstructorUsedError;
 }
 
-GetWeatherItemsModel _$GetWeatherItemsModelFromJson(Map<String, dynamic> json) {
+GetWeatherDataVariablesModel _$GetWeatherItemsModelFromJson(Map<String, dynamic> json) {
   return _GetWeatherItemsModel.fromJson(json);
 }
 
@@ -192,15 +192,15 @@ mixin _$GetWeatherItemsModel {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetWeatherItemsModelCopyWith<GetWeatherItemsModel> get copyWith =>
+  $GetWeatherItemsModelCopyWith<GetWeatherDataVariablesModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GetWeatherItemsModelCopyWith<$Res> {
-  factory $GetWeatherItemsModelCopyWith(GetWeatherItemsModel value,
-          $Res Function(GetWeatherItemsModel) then) =
-      _$GetWeatherItemsModelCopyWithImpl<$Res, GetWeatherItemsModel>;
+  factory $GetWeatherItemsModelCopyWith(GetWeatherDataVariablesModel value,
+          $Res Function(GetWeatherDataVariablesModel) then) =
+      _$GetWeatherItemsModelCopyWithImpl<$Res, GetWeatherDataVariablesModel>;
   @useResult
   $Res call(
       {String shownLocation,
@@ -213,7 +213,7 @@ abstract class $GetWeatherItemsModelCopyWith<$Res> {
 
 /// @nodoc
 class _$GetWeatherItemsModelCopyWithImpl<$Res,
-        $Val extends GetWeatherItemsModel>
+        $Val extends GetWeatherDataVariablesModel>
     implements $GetWeatherItemsModelCopyWith<$Res> {
   _$GetWeatherItemsModelCopyWithImpl(this._value, this._then);
 
@@ -396,7 +396,7 @@ class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
   }
 }
 
-abstract class _GetWeatherItemsModel implements GetWeatherItemsModel {
+abstract class _GetWeatherItemsModel implements GetWeatherDataVariablesModel {
   factory _GetWeatherItemsModel(
       {required final String shownLocation,
       required final String weatherIcon,

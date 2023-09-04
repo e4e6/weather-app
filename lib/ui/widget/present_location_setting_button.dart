@@ -13,7 +13,7 @@ import 'present_humidity_container.dart';
 class LocationSettingButton extends StatefulWidget {
   LocationSettingButton({super.key});
 
-  var weatherItems = GetWeatherItemsModel(
+  var weatherItems = GetWeatherDataVariablesModel(
       shownLocation: InitialData().location,
       weatherIcon: InitialData().weatherIcon,
       weatherWord: InitialData().weatherWord,
@@ -35,9 +35,9 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
     reload();
   }
   void reload()async{
-    var temp = await getWeatherItems();
+    var temp = await getWeatherDataVariables();
     setState(() {
-      widget.weatherItems = temp as GetWeatherItemsModel;
+      widget.weatherItems = temp as GetWeatherDataVariablesModel;
     });
   }
 
