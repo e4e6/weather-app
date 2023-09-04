@@ -4,9 +4,9 @@ import 'package:test_2/data/model/api_model.dart';
 
 import 'api_key.dart';
 
-final dio = Dio();
-
 class Api {
+  final dio = Dio();
+
   Future<GetMyCurrentLocationModel> getMyCurrentLocationData() async {
     try {
       Position position = await Geolocator.getCurrentPosition(
@@ -38,27 +38,5 @@ class Api {
       return jsonData;
     }
     throw ('statusCode: ${response.statusCode}');
-  }
-
-  Future<GetWeatherDataVariablesModel> getWeatherDataVariables() async {
-    List<double> graphData = [];
-    var mylocation = await getMyCurrentLocationData();
-    var myLatitude = mylocation.myLatitude;
-    var myLongitude = mylocation.myLongitude;
-
-    Map<String, dynamic> jsonData = await getCurrentWeatherData(
-        myLatitude: myLatitude, myLongitude: myLongitude);
-    Map<String, dynamic> jsonDataForGraph = await get5DaysWeatherData(
-        myLatitude: myLatitude, myLongitude: myLongitude);
-
-    return GetWeatherDataVariablesModel(
-      shownLocation: jsonData['name'],
-      weatherIcon: jsonData['weather'][0]['icon'],
-      weatherWord: jsonData['weather'][0]['main'],
-      shownWindSpeed: jsonData['wind']['speed'],
-      shownTemperature:
-          double.parse((jsonData['main']['temp'] - 273.15).toStringAsFixed(1)),
-      shownHumidity: jsonData['main']['humidity'],
-    );
   }
 }
