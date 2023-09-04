@@ -1,7 +1,7 @@
 import 'package:test_2/data/api/api.dart';
 import 'package:test_2/data/model/api_model.dart';
 
-class GetWeatherDataVariables {
+class GetWeatherDataVariablesController {
   var api = Api();
 
   Future<GetWeatherDataVariablesModel> getWeatherDataVariables() async {
@@ -16,13 +16,13 @@ class GetWeatherDataVariables {
         myLatitude: myLatitude, myLongitude: myLongitude);
 
     return GetWeatherDataVariablesModel(
-      shownLocation: jsonData['name'],
-      weatherIcon: jsonData['weather'][0]['icon'],
-      weatherWord: jsonData['weather'][0]['main'],
-      shownWindSpeed: jsonData['wind']['speed'],
-      shownTemperature:
+      location: jsonData['name'],
+      image: jsonData['weather'][0]['icon'],
+      word: jsonData['weather'][0]['main'],
+      windSpeed: jsonData['wind']['speed'],
+      temperature:
       double.parse((jsonData['main']['temp'] - 273.15).toStringAsFixed(1)),
-      shownHumidity: jsonData['main']['humidity'],
+      humidity: jsonData['main']['humidity'],
     );
   }
 }

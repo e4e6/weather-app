@@ -23,21 +23,21 @@ Map<String, dynamic> _$$_GetMyCurrentLocationModelToJson(
 _$_GetWeatherItemsModel _$$_GetWeatherItemsModelFromJson(
         Map<String, dynamic> json) =>
     _$_GetWeatherItemsModel(
-      shownLocation: json['shownLocation'] as String,
-      weatherIcon: json['weatherIcon'] as String,
-      weatherWord: json['weatherWord'] as String,
-      shownWindSpeed: (json['shownWindSpeed'] as num).toDouble(),
-      shownTemperature: (json['shownTemperature'] as num).toDouble(),
-      shownHumidity: json['shownHumidity'] as int,
+      location: json['location'] as String,
+      image: json['image'] as String,
+      word: json['word'] as String,
+      windSpeed: (json['windSpeed'] as num).toDouble(),
+      temperature: (json['temperature'] as num).toDouble(),
+      humidity: json['humidity'] as int,
     );
 
 Map<String, dynamic> _$$_GetWeatherItemsModelToJson(
         _$_GetWeatherItemsModel instance) =>
     <String, dynamic>{
-      'shownLocation': instance.shownLocation,
-      'weatherIcon': instance.weatherIcon,
-      'weatherWord': instance.weatherWord,
-      'shownWindSpeed': instance.shownWindSpeed,
-      'shownTemperature': instance.shownTemperature,
-      'shownHumidity': instance.shownHumidity,
+      'location': instance.location,
+      'image': instance.image,
+      'word': instance.word,
+      'windSpeed': instance.windSpeed,
+      'temperature': instance.temperature,
+      'humidity': instance.humidity,
     };

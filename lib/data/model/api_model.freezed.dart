@@ -177,45 +177,48 @@ abstract class _GetMyCurrentLocationModel implements GetMyCurrentLocationModel {
       get copyWith => throw _privateConstructorUsedError;
 }
 
-GetWeatherDataVariablesModel _$GetWeatherItemsModelFromJson(Map<String, dynamic> json) {
+GetWeatherDataVariablesModel _$GetWeatherDataVariablesModelFromJson(
+    Map<String, dynamic> json) {
   return _GetWeatherItemsModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$GetWeatherItemsModel {
-  String get shownLocation => throw _privateConstructorUsedError;
-  String get weatherIcon => throw _privateConstructorUsedError;
-  String get weatherWord => throw _privateConstructorUsedError;
-  double get shownWindSpeed => throw _privateConstructorUsedError;
-  double get shownTemperature => throw _privateConstructorUsedError;
-  int get shownHumidity => throw _privateConstructorUsedError;
+mixin _$GetWeatherDataVariablesModel {
+  String get location => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+  String get word => throw _privateConstructorUsedError;
+  double get windSpeed => throw _privateConstructorUsedError;
+  double get temperature => throw _privateConstructorUsedError;
+  int get humidity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GetWeatherItemsModelCopyWith<GetWeatherDataVariablesModel> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GetWeatherDataVariablesModelCopyWith<GetWeatherDataVariablesModel>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetWeatherItemsModelCopyWith<$Res> {
-  factory $GetWeatherItemsModelCopyWith(GetWeatherDataVariablesModel value,
+abstract class $GetWeatherDataVariablesModelCopyWith<$Res> {
+  factory $GetWeatherDataVariablesModelCopyWith(
+          GetWeatherDataVariablesModel value,
           $Res Function(GetWeatherDataVariablesModel) then) =
-      _$GetWeatherItemsModelCopyWithImpl<$Res, GetWeatherDataVariablesModel>;
+      _$GetWeatherDataVariablesModelCopyWithImpl<$Res,
+          GetWeatherDataVariablesModel>;
   @useResult
   $Res call(
-      {String shownLocation,
-      String weatherIcon,
-      String weatherWord,
-      double shownWindSpeed,
-      double shownTemperature,
-      int shownHumidity});
+      {String location,
+      String image,
+      String word,
+      double windSpeed,
+      double temperature,
+      int humidity});
 }
 
 /// @nodoc
-class _$GetWeatherItemsModelCopyWithImpl<$Res,
+class _$GetWeatherDataVariablesModelCopyWithImpl<$Res,
         $Val extends GetWeatherDataVariablesModel>
-    implements $GetWeatherItemsModelCopyWith<$Res> {
-  _$GetWeatherItemsModelCopyWithImpl(this._value, this._then);
+    implements $GetWeatherDataVariablesModelCopyWith<$Res> {
+  _$GetWeatherDataVariablesModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -225,37 +228,37 @@ class _$GetWeatherItemsModelCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? shownLocation = null,
-    Object? weatherIcon = null,
-    Object? weatherWord = null,
-    Object? shownWindSpeed = null,
-    Object? shownTemperature = null,
-    Object? shownHumidity = null,
+    Object? location = null,
+    Object? image = null,
+    Object? word = null,
+    Object? windSpeed = null,
+    Object? temperature = null,
+    Object? humidity = null,
   }) {
     return _then(_value.copyWith(
-      shownLocation: null == shownLocation
-          ? _value.shownLocation
-          : shownLocation // ignore: cast_nullable_to_non_nullable
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String,
-      weatherIcon: null == weatherIcon
-          ? _value.weatherIcon
-          : weatherIcon // ignore: cast_nullable_to_non_nullable
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
-      weatherWord: null == weatherWord
-          ? _value.weatherWord
-          : weatherWord // ignore: cast_nullable_to_non_nullable
+      word: null == word
+          ? _value.word
+          : word // ignore: cast_nullable_to_non_nullable
               as String,
-      shownWindSpeed: null == shownWindSpeed
-          ? _value.shownWindSpeed
-          : shownWindSpeed // ignore: cast_nullable_to_non_nullable
+      windSpeed: null == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
               as double,
-      shownTemperature: null == shownTemperature
-          ? _value.shownTemperature
-          : shownTemperature // ignore: cast_nullable_to_non_nullable
+      temperature: null == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
               as double,
-      shownHumidity: null == shownHumidity
-          ? _value.shownHumidity
-          : shownHumidity // ignore: cast_nullable_to_non_nullable
+      humidity: null == humidity
+          ? _value.humidity
+          : humidity // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -263,24 +266,25 @@ class _$GetWeatherItemsModelCopyWithImpl<$Res,
 
 /// @nodoc
 abstract class _$$_GetWeatherItemsModelCopyWith<$Res>
-    implements $GetWeatherItemsModelCopyWith<$Res> {
+    implements $GetWeatherDataVariablesModelCopyWith<$Res> {
   factory _$$_GetWeatherItemsModelCopyWith(_$_GetWeatherItemsModel value,
           $Res Function(_$_GetWeatherItemsModel) then) =
       __$$_GetWeatherItemsModelCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String shownLocation,
-      String weatherIcon,
-      String weatherWord,
-      double shownWindSpeed,
-      double shownTemperature,
-      int shownHumidity});
+      {String location,
+      String image,
+      String word,
+      double windSpeed,
+      double temperature,
+      int humidity});
 }
 
 /// @nodoc
 class __$$_GetWeatherItemsModelCopyWithImpl<$Res>
-    extends _$GetWeatherItemsModelCopyWithImpl<$Res, _$_GetWeatherItemsModel>
+    extends _$GetWeatherDataVariablesModelCopyWithImpl<$Res,
+        _$_GetWeatherItemsModel>
     implements _$$_GetWeatherItemsModelCopyWith<$Res> {
   __$$_GetWeatherItemsModelCopyWithImpl(_$_GetWeatherItemsModel _value,
       $Res Function(_$_GetWeatherItemsModel) _then)
@@ -289,37 +293,37 @@ class __$$_GetWeatherItemsModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? shownLocation = null,
-    Object? weatherIcon = null,
-    Object? weatherWord = null,
-    Object? shownWindSpeed = null,
-    Object? shownTemperature = null,
-    Object? shownHumidity = null,
+    Object? location = null,
+    Object? image = null,
+    Object? word = null,
+    Object? windSpeed = null,
+    Object? temperature = null,
+    Object? humidity = null,
   }) {
     return _then(_$_GetWeatherItemsModel(
-      shownLocation: null == shownLocation
-          ? _value.shownLocation
-          : shownLocation // ignore: cast_nullable_to_non_nullable
+      location: null == location
+          ? _value.location
+          : location // ignore: cast_nullable_to_non_nullable
               as String,
-      weatherIcon: null == weatherIcon
-          ? _value.weatherIcon
-          : weatherIcon // ignore: cast_nullable_to_non_nullable
+      image: null == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String,
-      weatherWord: null == weatherWord
-          ? _value.weatherWord
-          : weatherWord // ignore: cast_nullable_to_non_nullable
+      word: null == word
+          ? _value.word
+          : word // ignore: cast_nullable_to_non_nullable
               as String,
-      shownWindSpeed: null == shownWindSpeed
-          ? _value.shownWindSpeed
-          : shownWindSpeed // ignore: cast_nullable_to_non_nullable
+      windSpeed: null == windSpeed
+          ? _value.windSpeed
+          : windSpeed // ignore: cast_nullable_to_non_nullable
               as double,
-      shownTemperature: null == shownTemperature
-          ? _value.shownTemperature
-          : shownTemperature // ignore: cast_nullable_to_non_nullable
+      temperature: null == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
               as double,
-      shownHumidity: null == shownHumidity
-          ? _value.shownHumidity
-          : shownHumidity // ignore: cast_nullable_to_non_nullable
+      humidity: null == humidity
+          ? _value.humidity
+          : humidity // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -329,32 +333,32 @@ class __$$_GetWeatherItemsModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
   _$_GetWeatherItemsModel(
-      {required this.shownLocation,
-      required this.weatherIcon,
-      required this.weatherWord,
-      required this.shownWindSpeed,
-      required this.shownTemperature,
-      required this.shownHumidity});
+      {required this.location,
+      required this.image,
+      required this.word,
+      required this.windSpeed,
+      required this.temperature,
+      required this.humidity});
 
   factory _$_GetWeatherItemsModel.fromJson(Map<String, dynamic> json) =>
       _$$_GetWeatherItemsModelFromJson(json);
 
   @override
-  final String shownLocation;
+  final String location;
   @override
-  final String weatherIcon;
+  final String image;
   @override
-  final String weatherWord;
+  final String word;
   @override
-  final double shownWindSpeed;
+  final double windSpeed;
   @override
-  final double shownTemperature;
+  final double temperature;
   @override
-  final int shownHumidity;
+  final int humidity;
 
   @override
   String toString() {
-    return 'GetWeatherItemsModel(shownLocation: $shownLocation, weatherIcon: $weatherIcon, weatherWord: $weatherWord, shownWindSpeed: $shownWindSpeed, shownTemperature: $shownTemperature, shownHumidity: $shownHumidity)';
+    return 'GetWeatherDataVariablesModel(location: $location, image: $image, word: $word, windSpeed: $windSpeed, temperature: $temperature, humidity: $humidity)';
   }
 
   @override
@@ -362,24 +366,22 @@ class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GetWeatherItemsModel &&
-            (identical(other.shownLocation, shownLocation) ||
-                other.shownLocation == shownLocation) &&
-            (identical(other.weatherIcon, weatherIcon) ||
-                other.weatherIcon == weatherIcon) &&
-            (identical(other.weatherWord, weatherWord) ||
-                other.weatherWord == weatherWord) &&
-            (identical(other.shownWindSpeed, shownWindSpeed) ||
-                other.shownWindSpeed == shownWindSpeed) &&
-            (identical(other.shownTemperature, shownTemperature) ||
-                other.shownTemperature == shownTemperature) &&
-            (identical(other.shownHumidity, shownHumidity) ||
-                other.shownHumidity == shownHumidity));
+            (identical(other.location, location) ||
+                other.location == location) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.word, word) || other.word == word) &&
+            (identical(other.windSpeed, windSpeed) ||
+                other.windSpeed == windSpeed) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.humidity, humidity) ||
+                other.humidity == humidity));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, shownLocation, weatherIcon,
-      weatherWord, shownWindSpeed, shownTemperature, shownHumidity);
+  int get hashCode => Object.hash(
+      runtimeType, location, image, word, windSpeed, temperature, humidity);
 
   @JsonKey(ignore: true)
   @override
@@ -398,28 +400,28 @@ class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
 
 abstract class _GetWeatherItemsModel implements GetWeatherDataVariablesModel {
   factory _GetWeatherItemsModel(
-      {required final String shownLocation,
-      required final String weatherIcon,
-      required final String weatherWord,
-      required final double shownWindSpeed,
-      required final double shownTemperature,
-      required final int shownHumidity}) = _$_GetWeatherItemsModel;
+      {required final String location,
+      required final String image,
+      required final String word,
+      required final double windSpeed,
+      required final double temperature,
+      required final int humidity}) = _$_GetWeatherItemsModel;
 
   factory _GetWeatherItemsModel.fromJson(Map<String, dynamic> json) =
       _$_GetWeatherItemsModel.fromJson;
 
   @override
-  String get shownLocation;
+  String get location;
   @override
-  String get weatherIcon;
+  String get image;
   @override
-  String get weatherWord;
+  String get word;
   @override
-  double get shownWindSpeed;
+  double get windSpeed;
   @override
-  double get shownTemperature;
+  double get temperature;
   @override
-  int get shownHumidity;
+  int get humidity;
   @override
   @JsonKey(ignore: true)
   _$$_GetWeatherItemsModelCopyWith<_$_GetWeatherItemsModel> get copyWith =>

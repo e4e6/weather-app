@@ -14,15 +14,15 @@ import 'humidity_container.dart';
 class LocationSettingButton extends StatefulWidget {
   LocationSettingButton({super.key});
   var api = Api();
-  var getWeatherDataVariables = GetWeatherDataVariables();
+  var getWeatherDataVariables = GetWeatherDataVariablesController();
 
   var weatherItems = GetWeatherDataVariablesModel(
-      shownLocation: InitialData().location,
-      weatherIcon: InitialData().weatherIcon,
-      weatherWord: InitialData().weatherWord,
-      shownWindSpeed: InitialData().windSpeed,
-      shownTemperature: InitialData().temperature,
-      shownHumidity: InitialData().humidity,
+      location: InitialData().location,
+      image: InitialData().weatherIcon,
+      word: InitialData().weatherWord,
+      windSpeed: InitialData().windSpeed,
+      temperature: InitialData().temperature,
+      humidity: InitialData().humidity,
       );
 
 
@@ -54,7 +54,7 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
               children: [
                 Column(
                   children: [
-                    TemperatureWidget(temperature: widget.weatherItems.shownTemperature),
+                    TemperatureWidget(temperature: widget.weatherItems.temperature),
                     SizedBox(height: 10.h),
                     InkWell(
                       onTap: () {
@@ -77,7 +77,7 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                               // width: 20.w,
                               // ),
                               Text(
-                                '${widget.weatherItems.shownLocation}',
+                                '${widget.weatherItems.location}',
                                 style: TextStyle(fontSize: 25.sp),
                               ),
                               Icon(
@@ -91,8 +91,8 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                 ),
                 SizedBox(height: 20.h,width: 20.w),
                 WeatherWidget(
-                    weatherWord: '${widget.weatherItems.weatherWord}',
-                    weatherIcon: '${widget.weatherItems.weatherIcon}'),
+                    weatherWord: '${widget.weatherItems.word}',
+                    weatherIcon: '${widget.weatherItems.image}'),
               ],
             ),
           ],
@@ -101,9 +101,9 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            WindSpeedWidget(windSpeed: widget.weatherItems.shownWindSpeed),
+            WindSpeedWidget(windSpeed: widget.weatherItems.windSpeed),
             SizedBox(height: 20.h,width: 20.w),
-            HumidityWidget(humidity: widget.weatherItems.shownHumidity),
+            HumidityWidget(humidity: widget.weatherItems.humidity),
           ],
         ),
 
