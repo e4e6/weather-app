@@ -1,15 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'api_model.freezed.dart';
-part 'api_model.g.dart';
-
-@freezed
-class GetMyCurrentLocationModel with _$GetMyCurrentLocationModel {
-  factory GetMyCurrentLocationModel ({
-    required double myLatitude, required double myLongitude
-  }) =_GetMyCurrentLocationModel;
-  factory GetMyCurrentLocationModel.fromJson(Map<String, Object?> json) => _$GetMyCurrentLocationModelFromJson(json);
-}
+part 'get_weather_data_variables_model.freezed.dart';
+part 'get_weather_data_variables_model.g.dart';
 
 @freezed
 class GetWeatherDataVariablesModel with _$GetWeatherDataVariablesModel {

@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:test_2/data/model/api_model.dart';
+import 'package:test_2/data/model/get_my_current_location_model.dart';
+import 'package:test_2/data/model/get_weather_data_variables_model.dart';
 
 import 'api_key.dart';
 
