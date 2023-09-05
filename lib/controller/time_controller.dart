@@ -7,7 +7,7 @@ class TimeController with ChangeNotifier {
       year: DateTime.now().year,
       month: DateTime.now().month,
       day: DateTime.now().day,
-      hour: DateTime.now().second,
+      hour: DateTime.now().hour,
       minute: DateTime.now().minute);
 
   void updatePresentTimeModel() {
@@ -16,7 +16,7 @@ class TimeController with ChangeNotifier {
         year: DateTime.now().year,
         month: DateTime.now().month,
         day: DateTime.now().day,
-        hour: DateTime.now().second,
+        hour: DateTime.now().hour,
         minute: DateTime.now().minute);
   }
 }
