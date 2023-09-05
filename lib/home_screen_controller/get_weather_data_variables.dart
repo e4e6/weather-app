@@ -12,8 +12,6 @@ class GetWeatherDataVariablesController {
 
     Map<String, dynamic> jsonData = await api.getCurrentWeatherData(
         myLatitude: myLatitude, myLongitude: myLongitude);
-    Map<String, dynamic> jsonDataForGraph = await api.get5DaysWeatherData(
-        myLatitude: myLatitude, myLongitude: myLongitude);
 
     return GetWeatherDataVariablesModel(
       location: jsonData['name'],

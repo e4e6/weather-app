@@ -30,14 +30,4 @@ class Api {
     throw ('statusCode: ${response.statusCode}');
   }
 
-  Future<Map<String, dynamic>> get5DaysWeatherData(
-      {required double myLatitude, required double myLongitude}) async {
-    Response response = await dio.get(
-        'https://api.openweathermap.org/data/2.5/forecast?lat=$myLatitude&lon=$myLongitude&appid=$presentWeatherApiKey');
-    if (response.statusCode == 200) {
-      Map<String, dynamic> jsonData = response.data;
-      return jsonData;
-    }
-    throw ('statusCode: ${response.statusCode}');
-  }
 }
