@@ -6,7 +6,7 @@ import 'package:test_2/data/model/get_weather_data_variables_model.dart';
 import 'package:test_2/data/test/initial_data.dart';
 import 'package:test_2/home_screen_controller/get_weather_data_variables.dart';
 import 'package:test_2/ui/widget/temperature_text.dart';
-import 'package:test_2/ui/widget/weather_icon_and_text.dart';
+import 'package:test_2/ui/widget/weather_image_and_text.dart';
 import 'package:test_2/ui/widget/wind_speed_container.dart';
 
 import 'humidity_container.dart';
@@ -23,7 +23,7 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
   var getWeatherDataVariables = GetWeatherDataVariablesController();
   var weatherItems = GetWeatherDataVariablesModel(
     location: InitialData().location,
-    image: InitialData().weatherIcon,
+    image: InitialData().weatherImage,
     word: InitialData().weatherWord,
     windSpeed: InitialData().windSpeed,
     temperature: InitialData().temperature,
@@ -86,7 +86,7 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                 SizedBox(height: 20.h, width: 20.w),
                 WeatherWidget(
                     weatherWord: '${weatherItems.word}',
-                    weatherIcon: '${weatherItems.image}'),
+                    weatherImage: '${weatherItems.image}'),
               ],
             ),
           ],

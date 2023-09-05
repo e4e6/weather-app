@@ -8,11 +8,10 @@ class InitialData {
   int minute = dt.minute;
   double temperature = 11.1;
   String weatherWord = 'None';
-  String weatherIcon = '0000';
+  String weatherImage = '0000';
   String location = 'location';
   double myLatitude = 0;
   double myLongitude = 0;
   double windSpeed = 0;
   int humidity = 0;
-  List<double> graphData = [0.0,0,0,0,0];
 }
