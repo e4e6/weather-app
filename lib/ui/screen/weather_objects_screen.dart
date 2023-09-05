@@ -5,20 +5,22 @@ import 'package:test_2/data/model/get_weather_data_variables_model.dart';
 
 import 'package:test_2/data/test/initial_data.dart';
 import 'package:test_2/home_screen_controller/get_weather_data_variables.dart';
+import 'package:test_2/ui/widget/humidity_container.dart';
 import 'package:test_2/ui/widget/temperature_text.dart';
 import 'package:test_2/ui/widget/weather_image_and_text.dart';
 import 'package:test_2/ui/widget/wind_speed_container.dart';
 
-import 'humidity_container.dart';
 
-class LocationSettingButton extends StatefulWidget {
-  LocationSettingButton({super.key});
+
+//<?>이렇게 한 화면을 두 파일로 반반 나누기도 하는지 궁금함
+class WeatherVariablesScreen extends StatefulWidget {
+  WeatherVariablesScreen({super.key});
 
   @override
-  State<LocationSettingButton> createState() => _LocationSettingButtonState();
+  State<WeatherVariablesScreen> createState() => _WeatherObjectsScreenState();
 }
 
-class _LocationSettingButtonState extends State<LocationSettingButton> {
+class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
   var api = Api();
   var getWeatherDataVariables = GetWeatherDataVariablesController();
   var weatherItems = GetWeatherDataVariablesModel(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_2/data/test/initial_data.dart';
 
-import 'package:test_2/ui/widget/location_setting_button.dart';
+import 'package:test_2/ui/screen/weather_objects_screen.dart';
 import 'package:test_2/ui/widget/time_text.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    LocationSettingButton(),
+                    WeatherVariablesScreen(),
                   ],
                 ),
               ],
