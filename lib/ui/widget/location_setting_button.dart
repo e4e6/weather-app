@@ -13,35 +13,34 @@ import 'humidity_container.dart';
 
 class LocationSettingButton extends StatefulWidget {
   LocationSettingButton({super.key});
-  var api = Api();
-  var getWeatherDataVariables = GetWeatherDataVariablesController();
-
-  var weatherItems = GetWeatherDataVariablesModel(
-      location: InitialData().location,
-      image: InitialData().weatherIcon,
-      word: InitialData().weatherWord,
-      windSpeed: InitialData().windSpeed,
-      temperature: InitialData().temperature,
-      humidity: InitialData().humidity,
-      );
-
-
-
 
   @override
   State<LocationSettingButton> createState() => _LocationSettingButtonState();
 }
+
 class _LocationSettingButtonState extends State<LocationSettingButton> {
+  var api = Api();
+  var getWeatherDataVariables = GetWeatherDataVariablesController();
+  var weatherItems = GetWeatherDataVariablesModel(
+    location: InitialData().location,
+    image: InitialData().weatherIcon,
+    word: InitialData().weatherWord,
+    windSpeed: InitialData().windSpeed,
+    temperature: InitialData().temperature,
+    humidity: InitialData().humidity,
+  );
+
+  void reload() async {
+    var temp = await getWeatherDataVariables.getWeatherDataVariables();
+    setState(() {
+      weatherItems = temp as GetWeatherDataVariablesModel;
+    });
+  }
+
   @override
-  void initState(){
+  void initState() {
     super.initState();
     reload();
-  }
-  void reload()async{
-    var temp = await widget.getWeatherDataVariables.getWeatherDataVariables();
-    setState(() {
-      widget.weatherItems = temp as GetWeatherDataVariablesModel;
-    });
   }
 
   @override
@@ -54,17 +53,15 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
               children: [
                 Column(
                   children: [
-                    TemperatureWidget(temperature: widget.weatherItems.temperature),
+                    TemperatureWidget(temperature: weatherItems.temperature),
                     SizedBox(height: 10.h),
                     InkWell(
                       onTap: () {
                         reload();
                       },
                       child: Container(
-
                           width: 140.sp,
                           height: 40.sp,
-
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50).w,
                             color: Colors.grey[350],
@@ -77,22 +74,19 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
                               // width: 20.w,
                               // ),
                               Text(
-                                '${widget.weatherItems.location}',
+                                '${weatherItems.location}',
                                 style: TextStyle(fontSize: 25.sp),
                               ),
-                              Icon(
-                                Icons.location_on,
-                                size:30.sp
-                              ),
+                              Icon(Icons.location_on, size: 30.sp),
                             ],
                           )),
                     ),
                   ],
                 ),
-                SizedBox(height: 20.h,width: 20.w),
+                SizedBox(height: 20.h, width: 20.w),
                 WeatherWidget(
-                    weatherWord: '${widget.weatherItems.word}',
-                    weatherIcon: '${widget.weatherItems.image}'),
+                    weatherWord: '${weatherItems.word}',
+                    weatherIcon: '${weatherItems.image}'),
               ],
             ),
           ],
@@ -101,15 +95,13 @@ class _LocationSettingButtonState extends State<LocationSettingButton> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            WindSpeedWidget(windSpeed: widget.weatherItems.windSpeed),
-            SizedBox(height: 20.h,width: 20.w),
-            HumidityWidget(humidity: widget.weatherItems.humidity),
+            WindSpeedWidget(windSpeed: weatherItems.windSpeed),
+            SizedBox(height: 20.h, width: 20.w),
+            HumidityWidget(humidity: weatherItems.humidity),
           ],
         ),
-
         SizedBox(height: 20.h),
       ],
     );
   }
 }
-
