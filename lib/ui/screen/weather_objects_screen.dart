@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test_2/controller/get_weather_data_variables.dart';
-import 'package:test_2/data/model/get_weather_data_variables_model.dart';
+import 'package:test_2/data/model/get_weather_data_variables_model/get_weather_data_variables_model.dart';
 
 import 'package:test_2/data/test/initial_data.dart';
 import 'package:test_2/ui/widget/humidity_container.dart';

@@ -1,5 +1,5 @@
 import 'package:test_2/data/api/api.dart';
-import 'package:test_2/data/model/get_weather_data_variables_model.dart';
+import 'package:test_2/data/model/get_weather_data_variables_model/get_weather_data_variables_model.dart';
 
 class GetWeatherDataVariablesController {
   var api = Api();
