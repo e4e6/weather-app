@@ -5,7 +5,6 @@ class GetWeatherDataVariablesController {
   var api = Api();
 
   Future<GetWeatherDataVariablesModel> getWeatherDataVariables() async {
-    List<double> graphData = [];
     var mylocation = await api.getMyCurrentLocationData();
     var myLatitude = mylocation.myLatitude;
     var myLongitude = mylocation.myLongitude;

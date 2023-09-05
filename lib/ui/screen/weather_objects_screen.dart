@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:test_2/data/api/api.dart';
 import 'package:test_2/data/model/get_weather_data_variables_model.dart';
 
 import 'package:test_2/data/test/initial_data.dart';
@@ -9,8 +8,6 @@ import 'package:test_2/ui/widget/humidity_container.dart';
 import 'package:test_2/ui/widget/temperature_text.dart';
 import 'package:test_2/ui/widget/weather_image_and_text.dart';
 import 'package:test_2/ui/widget/wind_speed_container.dart';
-
-
 
 //<?>이렇게 한 화면을 두 파일로 반반 나누기도 하는지 궁금함
 class WeatherVariablesScreen extends StatefulWidget {
@@ -21,9 +18,8 @@ class WeatherVariablesScreen extends StatefulWidget {
 }
 
 class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
-  var api = Api();
   var getWeatherDataVariables = GetWeatherDataVariablesController();
-  var weatherItems = GetWeatherDataVariablesModel(
+  GetWeatherDataVariablesModel weatherItems = GetWeatherDataVariablesModel(
     location: InitialData().location,
     image: InitialData().weatherImage,
     word: InitialData().weatherWord,
@@ -33,9 +29,10 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
   );
 
   void reload() async {
-    var temp = await getWeatherDataVariables.getWeatherDataVariables();
+    GetWeatherDataVariablesModel temp =
+        await getWeatherDataVariables.getWeatherDataVariables();
     setState(() {
-      weatherItems = temp as GetWeatherDataVariablesModel;
+      weatherItems = temp;
     });
   }
 
@@ -71,10 +68,6 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              // SizedBox(
-                              // height: 10.h,
-                              // width: 20.w,
-                              // ),
                               Text(
                                 '${weatherItems.location}',
                                 style: TextStyle(fontSize: 25.sp),
