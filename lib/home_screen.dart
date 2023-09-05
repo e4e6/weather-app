@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:test_2/controller/time_controller.dart';
 import 'package:test_2/data/test/initial_data.dart';
 
 import 'package:test_2/ui/screen/weather_objects_screen.dart';
@@ -34,13 +36,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                       children: [
                         Text(
-                          '${shownTimeData.year} , ${shownTimeData.month} , ${shownTimeData.day}',
+                          '${Provider.of<TimeController>(context).presentTimeModel.year} , ${Provider.of<TimeController>(context).presentTimeModel.month} , ${Provider.of<TimeController>(context).presentTimeModel.day}',
                           style:
                               TextStyle(fontSize: 25.sp, color: Colors.black),
                         ),
                         TimeWidget(
-                            hour: shownTimeData.hour,
-                            minute: shownTimeData.minute)
+                            hour: Provider.of<TimeController>(context).presentTimeModel.hour,
+                            minute: Provider.of<TimeController>(context).presentTimeModel.minute)
                       ],
                     )),
                   ],
