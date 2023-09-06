@@ -6,6 +6,7 @@ class InitialData {
   int day = dt.day;
   int hour = dt.hour;
   int minute = dt.minute;
+
   double temperature = 11.1;
   String weatherWord = 'None';
   String weatherImage = '0000';

@@ -3,9 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:test_2/controller/get_weather_data_variables_controller.dart';
 import 'package:test_2/controller/time_controller.dart';
-import 'package:test_2/data/model/get_weather_data_variables_model/get_weather_data_variables_model.dart';
 
-import 'package:test_2/data/test/initial_data.dart';
 import 'package:test_2/ui/widget/humidity_container.dart';
 import 'package:test_2/ui/widget/temperature_text.dart';
 import 'package:test_2/ui/widget/weather_image_and_text.dart';
@@ -20,28 +18,12 @@ class WeatherVariablesScreen extends StatefulWidget {
 }
 
 class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
-  var getWeatherDataVariables = GetWeatherDataVariablesController();
-  GetWeatherDataVariablesModel weatherItems = GetWeatherDataVariablesModel(
-    location: InitialData().location,
-    image: InitialData().weatherImage,
-    word: InitialData().weatherWord,
-    windSpeed: InitialData().windSpeed,
-    temperature: InitialData().temperature,
-    humidity: InitialData().humidity,
-  );
-
-  void reload() async {
-    GetWeatherDataVariablesModel temp =
-        await getWeatherDataVariables.getWeatherDataVariables();
-    setState(() {
-      weatherItems = temp;
-    });
-  }
+  //
 
   @override
   void initState() {
     super.initState();
-    reload();
+    Provider.of<GetWeatherDataVariablesController>(context,listen:false).updateGetWeatherDataVariablesModel();
   }
 
   @override
@@ -54,11 +36,11 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
               children: [
                 Column(
                   children: [
-                    TemperatureWidget(temperature: weatherItems.temperature),
+                    TemperatureWidget(temperature: Provider.of<GetWeatherDataVariablesController>(context).weatherItems.temperature),
                     SizedBox(height: 10.h),
                     InkWell(
                       onTap: () {
-                        reload();
+                        Provider.of<GetWeatherDataVariablesController>(context,listen:false).updateGetWeatherDataVariablesModel();
                         Provider.of<TimeController>(context,listen:false).updatePresentTimeModel();
                       },
                       child: Container(
@@ -72,7 +54,7 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${weatherItems.location}',
+                                '${Provider.of<GetWeatherDataVariablesController>(context).weatherItems.location}',
                                 style: TextStyle(fontSize: 25.sp),
                               ),
                               Icon(Icons.location_on, size: 30.sp),
@@ -83,8 +65,8 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                 ),
                 SizedBox(height: 20.h, width: 20.w),
                 WeatherWidget(
-                    weatherWord: '${weatherItems.word}',
-                    weatherImage: '${weatherItems.image}'),
+                    weatherWord: '${Provider.of<GetWeatherDataVariablesController>(context).weatherItems.word}',
+                    weatherImage: '${Provider.of<GetWeatherDataVariablesController>(context).weatherItems.image}'),
               ],
             ),
           ],
@@ -93,9 +75,9 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            WindSpeedWidget(windSpeed: weatherItems.windSpeed),
+            WindSpeedWidget(windSpeed: Provider.of<GetWeatherDataVariablesController>(context).weatherItems.windSpeed),
             SizedBox(height: 20.h, width: 20.w),
-            HumidityWidget(humidity: weatherItems.humidity),
+            HumidityWidget(humidity: Provider.of<GetWeatherDataVariablesController>(context).weatherItems.humidity),
           ],
         ),
         SizedBox(height: 20.h),

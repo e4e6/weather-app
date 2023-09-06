@@ -41,8 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               TextStyle(fontSize: 25.sp, color: Colors.black),
                         ),
                         TimeWidget(
-                            hour: Provider.of<TimeController>(context).presentTimeModel.hour,
-                            minute: Provider.of<TimeController>(context).presentTimeModel.minute)
+                            hour: Provider.of<TimeController>(context)
+                                .presentTimeModel.hour,
+                            minute: Provider.of<TimeController>(context)
+                                .presentTimeModel.minute)
                       ],
                     )),
                   ],
