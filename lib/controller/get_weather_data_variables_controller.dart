@@ -7,9 +7,9 @@ class GetWeatherDataVariablesController with ChangeNotifier {
   var api = Api();
 
   Future<GetWeatherDataVariablesModel> getWeatherDataVariables() async {
-    var mylocation = await api.getMyCurrentLocationData();
-    var myLatitude = mylocation.myLatitude;
-    var myLongitude = mylocation.myLongitude;
+    var myLocation = await api.getMyCurrentLocationData();
+    var myLatitude = myLocation.myLatitude;
+    var myLongitude = myLocation.myLongitude;
 
     Map<String, dynamic> jsonData = await api.getCurrentWeatherData(
         myLatitude: myLatitude, myLongitude: myLongitude);

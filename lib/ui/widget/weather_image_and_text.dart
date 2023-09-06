@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_2/original_design_value.dart';
 
 class WeatherWidget extends StatefulWidget {
   WeatherWidget(
@@ -13,6 +14,8 @@ class WeatherWidget extends StatefulWidget {
 }
 
 class _WeatherWidgetState extends State<WeatherWidget> {
+  var originalColors = OriginalColorValue();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -32,7 +35,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
           ),
           Text(
             '${widget.weatherWord}',
-            style: TextStyle(fontSize: 30.w),
+            style: TextStyle(fontSize: 30.w, color: originalColors.widgetTextColor),
           ),
         ],
       ),
