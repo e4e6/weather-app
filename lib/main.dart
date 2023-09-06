@@ -19,7 +19,7 @@ class Main extends StatelessWidget {
         ChangeNotifierProvider(create:(context) => TimeController(),)
       ],
       child: ScreenUtilInit(
-          designSize: const Size(360, 800),
+          designSize: const Size(360, 640),
           builder: (_, child) => MaterialApp(home: HomeScreen())),
     );
   }
