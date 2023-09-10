@@ -18,7 +18,11 @@ class Main extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create:(context) => TimeController()),
-        ChangeNotifierProvider(create: (context)=> GetWeatherDataVariablesController(),)
+        ChangeNotifierProvider(create: (context)=> GetWeatherDataVariablesController(),),
+        /// Buildcontext 같은 경우에는 _ 이런식으로 자주 사용한다. 아래처럼 사용하면 된다.
+
+        // ChangeNotifierProvider(create:(_) => TimeController()),
+        // ChangeNotifierProvider(create: (_)=> GetWeatherDataVariablesController(),)
       ],
       child: ScreenUtilInit(
           designSize: const Size(360, 640),

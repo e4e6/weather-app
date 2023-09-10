@@ -11,6 +11,8 @@ import 'package:test_2/ui/widget/weather_image_and_text.dart';
 import 'package:test_2/ui/widget/wind_speed_container.dart';
 
 //<?>이렇게 한 화면을 두 파일로 반반 나누기도 하는지 궁금함
+/// 위에 말이 먼지 정확히 모르겠음 구체적으로 적어주면 좋겠다.
+/// 한 화면을 두개의 파일로 나누어야 되는 이유가 있다면 상관없다. 애당초 화면이라는것이 widget의 모임이기 때문에 크게 신경쓰지 말고 다 해본다음에 좋다고 생각하는걸 선택하면 된다.
 class WeatherVariablesScreen extends StatefulWidget {
   WeatherVariablesScreen({super.key});
 
@@ -29,6 +31,12 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    /// 아래 코드도 provider은 변수로 만들기
+
+    /// 예시 코드
+    final weatherControllerRead = Provider.of<GetWeatherDataVariablesController>(context,listen:false);
+    final weatherControllerWatch = Provider.of<GetWeatherDataVariablesController>(context,listen:true);
+
     return Column(
       children: [
         Column(
