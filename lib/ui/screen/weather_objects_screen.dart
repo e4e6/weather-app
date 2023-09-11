@@ -18,8 +18,6 @@ class WeatherVariablesScreen extends StatefulWidget {
 }
 
 class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
-  var originalColors = OriginalColorValue();
-
   @override
   void initState() {
     super.initState();
@@ -48,7 +46,7 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                           height: 40.sp,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50).w,
-                            color: originalColors.widgetBackgroundColor,
+                            color: OriginalColorValue().widgetBackgroundColor,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,

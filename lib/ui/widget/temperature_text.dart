@@ -12,13 +12,11 @@ class TemperatureWidget extends StatefulWidget {
 }
 
 class _TemperatureWidgetState extends State<TemperatureWidget> {
-  var originalColors = OriginalColorValue();
-
   @override
   Widget build(BuildContext context) {
     return Text(
       '${widget.temperature}°',
-      style: TextStyle(fontSize: 60.w, color: originalColors.widgetTextColor),
+      style: TextStyle(fontSize: 60.w, color: OriginalColorValue().widgetTextColor),
     );
   }
 }

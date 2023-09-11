@@ -13,13 +13,11 @@ class TimeWidget extends StatefulWidget {
 }
 
 class _TimeWidgetState extends State<TimeWidget> {
-  var originalColors = OriginalColorValue();
-
   @override
   Widget build(BuildContext context) {
     return Text(
       '${widget.hour}:${widget.minute}',
-      style: TextStyle(fontSize: 40.sp, color: originalColors.widgetTextColor),
+      style: TextStyle(fontSize: 40.sp, color: OriginalColorValue().widgetTextColor),
     );
   }
 }

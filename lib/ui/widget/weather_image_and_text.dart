@@ -14,8 +14,6 @@ class WeatherWidget extends StatefulWidget {
 }
 
 class _WeatherWidgetState extends State<WeatherWidget> {
-  var originalColors = OriginalColorValue();
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -35,7 +33,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
           ),
           Text(
             '${widget.weatherWord}',
-            style: TextStyle(fontSize: 30.w, color: originalColors.widgetTextColor),
+            style: TextStyle(fontSize: 30.w, color: OriginalColorValue().widgetTextColor),
           ),
         ],
       ),

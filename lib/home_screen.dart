@@ -15,7 +15,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var originalColors = OriginalColorValue();
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          color: originalColors.homeScreenBackgroundColor,
+          color: OriginalColorValue().homeScreenBackgroundColor,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -38,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Text(
                           '${Provider.of<TimeController>(context).presentTimeModel.year} , ${Provider.of<TimeController>(context).presentTimeModel.month} , ${Provider.of<TimeController>(context).presentTimeModel.day}',
                           style:
-                              TextStyle(fontSize: 25.sp, color: originalColors.widgetTextColor),
+                              TextStyle(fontSize: 25.sp, color: OriginalColorValue().widgetTextColor),
                         ),
                         TimeWidget(
                             hour: Provider.of<TimeController>(context)

@@ -12,15 +12,13 @@ class WindSpeedWidget extends StatefulWidget {
 }
 
 class _WindSpeedWidgetState extends State<WindSpeedWidget> {
-  var originalColors = OriginalColorValue();
-
   @override
   Widget build(BuildContext context) {
     return Container(
         width: 140.w,
         height: 120.h,
         decoration: BoxDecoration(
-          color: originalColors.widgetBackgroundColor,
+          color: OriginalColorValue().widgetBackgroundColor,
           borderRadius: BorderRadius.circular(20),
         ),
         child: Row(
@@ -28,7 +26,7 @@ class _WindSpeedWidgetState extends State<WindSpeedWidget> {
           children: [
             Icon(Icons.wind_power),
             Text('${widget.windSpeed}m/s',
-                style: TextStyle(fontSize: 30.sp, color:originalColors.widgetTextColor)),
+                style: TextStyle(fontSize: 30.sp, color:OriginalColorValue().widgetTextColor)),
           ],
         ));
   }
