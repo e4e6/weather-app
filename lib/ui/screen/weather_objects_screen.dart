@@ -10,7 +10,6 @@ import 'package:test_2/ui/widget/temperature_text.dart';
 import 'package:test_2/ui/widget/weather_image_and_text.dart';
 import 'package:test_2/ui/widget/wind_speed_container.dart';
 
-//<?>이렇게 한 화면을 두 파일로 반반 나누기도 하는지 궁금함
 class WeatherVariablesScreen extends StatefulWidget {
   WeatherVariablesScreen({super.key});
 
