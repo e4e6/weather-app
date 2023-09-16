@@ -7,6 +7,8 @@ import 'package:test_2/original_design_value.dart';
 import 'package:test_2/ui/screen/weather_objects_screen.dart';
 import 'package:test_2/ui/widget/time_text.dart';
 
+import 'controller/get_weather_data_variables_controller.dart';
+
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
 
@@ -15,6 +17,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initSteate() {
+    print('0');
+    super.initState();
+    Provider.of<GetWeatherDataVariablesController>(context,listen:false).updateGetWeatherDataVariablesModel();
+  } // 프로바이더 적용 이후로 이거 실행이 안됨 왜 그런지 모르겠음
 
   @override
   Widget build(BuildContext context) {

@@ -18,11 +18,6 @@ class WeatherVariablesScreen extends StatefulWidget {
 }
 
 class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Provider.of<GetWeatherDataVariablesController>(context,listen:false).updateGetWeatherDataVariablesModel();
-  }
 
   @override
   Widget build(BuildContext context) {
