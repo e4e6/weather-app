@@ -35,8 +35,8 @@ class GetWeatherDataVariablesController with ChangeNotifier {
   ); //데이터 불러오기 전 화면에 표시될 초기값
 
   void updateGetWeatherDataVariablesModel() async {
-    notifyListeners();
     GetWeatherDataVariablesModel temp = await getWeatherDataVariables();
     weatherItems = temp;
+    notifyListeners();
   }
 }

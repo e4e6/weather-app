@@ -18,7 +18,6 @@ class WeatherVariablesScreen extends StatefulWidget {
 }
 
 class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Column(

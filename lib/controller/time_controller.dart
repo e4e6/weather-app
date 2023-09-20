@@ -10,12 +10,12 @@ class TimeController with ChangeNotifier {
       minute: DateTime.now().minute);
 
   void updatePresentTimeModel() {
-    notifyListeners();
     presentTimeModel = TimeModel(
         year: DateTime.now().year,
         month: DateTime.now().month,
         day: DateTime.now().day,
         hour: DateTime.now().hour,
         minute: DateTime.now().minute);
+    notifyListeners();
   }
 }
