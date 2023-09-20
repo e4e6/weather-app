@@ -140,24 +140,29 @@ class __$$_TimeModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_TimeModel implements _TimeModel {
   _$_TimeModel(
-      {required this.year,
-      required this.month,
-      required this.day,
-      required this.hour,
-      required this.minute});
+      {this.year = 0,
+      this.month = 0,
+      this.day = 0,
+      this.hour = 0,
+      this.minute = 0});
 
   factory _$_TimeModel.fromJson(Map<String, dynamic> json) =>
       _$$_TimeModelFromJson(json);
 
   @override
+  @JsonKey()
   final int year;
   @override
+  @JsonKey()
   final int month;
   @override
+  @JsonKey()
   final int day;
   @override
+  @JsonKey()
   final int hour;
   @override
+  @JsonKey()
   final int minute;
 
   @override
@@ -197,11 +202,11 @@ class _$_TimeModel implements _TimeModel {
 
 abstract class _TimeModel implements TimeModel {
   factory _TimeModel(
-      {required final int year,
-      required final int month,
-      required final int day,
-      required final int hour,
-      required final int minute}) = _$_TimeModel;
+      {final int year,
+      final int month,
+      final int day,
+      final int hour,
+      final int minute}) = _$_TimeModel;
 
   factory _TimeModel.fromJson(Map<String, dynamic> json) =
       _$_TimeModel.fromJson;

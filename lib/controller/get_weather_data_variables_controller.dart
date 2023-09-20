@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:test_2/data/api/api.dart';
 import 'package:test_2/data/model/get_weather_data_variables_model/get_weather_data_variables_model.dart';
-import 'package:test_2/data/test/initial_data.dart';
 
 class GetWeatherDataVariablesController with ChangeNotifier {
   var api = Api();
@@ -25,14 +24,7 @@ class GetWeatherDataVariablesController with ChangeNotifier {
     );
   }
 
-  GetWeatherDataVariablesModel weatherItems = GetWeatherDataVariablesModel(
-    location: InitialData().location,
-    image: InitialData().weatherImage,
-    word: InitialData().weatherWord,
-    windSpeed: InitialData().windSpeed,
-    temperature: InitialData().temperature,
-    humidity: InitialData().humidity,
-  ); //데이터 불러오기 전 화면에 표시될 초기값
+  GetWeatherDataVariablesModel weatherItems = GetWeatherDataVariablesModel();
 
   void updateGetWeatherDataVariablesModel() async {
     GetWeatherDataVariablesModel temp = await getWeatherDataVariables();

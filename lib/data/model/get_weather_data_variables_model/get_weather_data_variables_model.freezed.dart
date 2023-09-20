@@ -170,27 +170,33 @@ class __$$_GetWeatherItemsModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
   _$_GetWeatherItemsModel(
-      {required this.location,
-      required this.image,
-      required this.word,
-      required this.windSpeed,
-      required this.temperature,
-      required this.humidity});
+      {this.location = 'loading',
+      this.image = '0000',
+      this.word = 'loading',
+      this.windSpeed = 0.0,
+      this.temperature = 0.0,
+      this.humidity = 0});
 
   factory _$_GetWeatherItemsModel.fromJson(Map<String, dynamic> json) =>
       _$$_GetWeatherItemsModelFromJson(json);
 
   @override
+  @JsonKey()
   final String location;
   @override
+  @JsonKey()
   final String image;
   @override
+  @JsonKey()
   final String word;
   @override
+  @JsonKey()
   final double windSpeed;
   @override
+  @JsonKey()
   final double temperature;
   @override
+  @JsonKey()
   final int humidity;
 
   @override
@@ -237,12 +243,12 @@ class _$_GetWeatherItemsModel implements _GetWeatherItemsModel {
 
 abstract class _GetWeatherItemsModel implements GetWeatherDataVariablesModel {
   factory _GetWeatherItemsModel(
-      {required final String location,
-      required final String image,
-      required final String word,
-      required final double windSpeed,
-      required final double temperature,
-      required final int humidity}) = _$_GetWeatherItemsModel;
+      {final String location,
+      final String image,
+      final String word,
+      final double windSpeed,
+      final double temperature,
+      final int humidity}) = _$_GetWeatherItemsModel;
 
   factory _GetWeatherItemsModel.fromJson(Map<String, dynamic> json) =
       _$_GetWeatherItemsModel.fromJson;

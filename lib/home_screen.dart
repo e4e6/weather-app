@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     Provider.of<GetWeatherDataVariablesController>(context,listen:false).updateGetWeatherDataVariablesModel();
+    Provider.of<TimeController>(context,listen:false).updatePresentTimeModel();
   }
 
   @override

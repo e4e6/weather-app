@@ -7,11 +7,11 @@ part of 'time_model.dart';
 // **************************************************************************
 
 _$_TimeModel _$$_TimeModelFromJson(Map<String, dynamic> json) => _$_TimeModel(
-      year: json['year'] as int,
-      month: json['month'] as int,
-      day: json['day'] as int,
-      hour: json['hour'] as int,
-      minute: json['minute'] as int,
+      year: json['year'] as int? ?? 0,
+      month: json['month'] as int? ?? 0,
+      day: json['day'] as int? ?? 0,
+      hour: json['hour'] as int? ?? 0,
+      minute: json['minute'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_TimeModelToJson(_$_TimeModel instance) =>
