@@ -20,6 +20,10 @@ class WeatherVariablesScreen extends StatefulWidget {
 class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
   @override
   Widget build(BuildContext _) {
+    final GetWeatherDataVariablesController getWeatherDataVariablesControllerRead =
+    Provider.of<GetWeatherDataVariablesController>(_, listen: false);
+    final TimeController timeControllerRead = Provider.of<TimeController>(_, listen: false);
+
     return Column(
       children: [
         Column(
@@ -28,12 +32,18 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
               children: [
                 Column(
                   children: [
-                    TemperatureWidget(temperature: Provider.of<GetWeatherDataVariablesController>(_).weatherItems.temperature),
+                    TemperatureWidget(
+                        temperature:
+                            Provider.of<GetWeatherDataVariablesController>(_)
+                                .weatherItems
+                                .temperature),
                     SizedBox(height: 10.h),
                     InkWell(
                       onTap: () {
-                        Provider.of<GetWeatherDataVariablesController>(_,listen:false).updateGetWeatherDataVariablesModel();
-                        Provider.of<TimeController>(_,listen:false).updatePresentTimeModel();
+                        getWeatherDataVariablesControllerRead
+                            .updateGetWeatherDataVariablesModel();
+                        timeControllerRead
+                            .updatePresentTimeModel(); // 컨트롤러로 옮기기
                       },
                       child: Container(
                           width: 140.sp,
@@ -46,7 +56,7 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${Provider.of<GetWeatherDataVariablesController>(_).weatherItems.location}',
+                                '${getWeatherDataVariablesControllerRead.weatherItems.location}',
                                 style: TextStyle(fontSize: 25.sp),
                               ),
                               Icon(Icons.location_on, size: 30.sp),
@@ -57,8 +67,10 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                 ),
                 SizedBox(height: 20.h, width: 20.w),
                 WeatherWidget(
-                    weatherWord: '${Provider.of<GetWeatherDataVariablesController>(_).weatherItems.word}',
-                    weatherImage: '${Provider.of<GetWeatherDataVariablesController>(_).weatherItems.image}'),
+                    weatherWord:
+                        '${getWeatherDataVariablesControllerRead.weatherItems.word}',
+                    weatherImage:
+                        '${getWeatherDataVariablesControllerRead.weatherItems.image}'),
               ],
             ),
           ],
@@ -67,9 +79,13 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            WindSpeedWidget(windSpeed: Provider.of<GetWeatherDataVariablesController>(_).weatherItems.windSpeed),
+            WindSpeedWidget(
+                windSpeed: getWeatherDataVariablesControllerRead
+                    .weatherItems.windSpeed),
             SizedBox(height: 20.h, width: 20.w),
-            HumidityWidget(humidity: Provider.of<GetWeatherDataVariablesController>(_).weatherItems.humidity),
+            HumidityWidget(
+                humidity: getWeatherDataVariablesControllerRead
+                    .weatherItems.humidity),
           ],
         ),
         SizedBox(height: 20.h),

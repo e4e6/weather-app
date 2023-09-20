@@ -20,12 +20,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<GetWeatherDataVariablesController>(context,listen:false).updateGetWeatherDataVariablesModel();
-    Provider.of<TimeController>(context,listen:false).updatePresentTimeModel();
-  }
+    Provider.of<GetWeatherDataVariablesController>(context, listen: false)
+        .updateGetWeatherDataVariablesModel();
+    Provider.of<TimeController>(context, listen: false)
+        .updatePresentTimeModel();
+  } //컨트롤러로 옮기기
 
   @override
   Widget build(BuildContext _) {
+    final TimeController timeControllerRead = Provider.of<TimeController>(_);
+
     return Scaffold(
         body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -43,15 +47,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                       children: [
                         Text(
-                          '${Provider.of<TimeController>(_).presentTimeModel.year} , ${Provider.of<TimeController>(_).presentTimeModel.month} , ${Provider.of<TimeController>(context).presentTimeModel.day}',
-                          style:
-                              TextStyle(fontSize: 25.sp, color: Constant().widgetTextColor),
+                          '${timeControllerRead.presentTimeModel.year} , ${timeControllerRead.presentTimeModel.month} , ${timeControllerRead.presentTimeModel.day}',
+                          style: TextStyle(
+                              fontSize: 25.sp,
+                              color: Constant().widgetTextColor),
                         ),
                         TimeWidget(
-                            hour: Provider.of<TimeController>(_)
-                                .presentTimeModel.hour,
-                            minute: Provider.of<TimeController>(_)
-                                .presentTimeModel.minute)
+                            hour: timeControllerRead.presentTimeModel.hour,
+                            minute: timeControllerRead.presentTimeModel.minute)
                       ],
                     )),
                   ],
