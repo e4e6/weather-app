@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:test_2/constant/constant.dart';
 import 'package:test_2/controller/get_weather_data_variables_controller.dart';
 import 'package:test_2/controller/time_controller.dart';
-import 'package:test_2/original_design_value.dart';
 
 import 'package:test_2/ui/widget/humidity_container.dart';
 import 'package:test_2/ui/widget/temperature_text.dart';
@@ -40,7 +40,7 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                           height: 40.sp,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50).w,
-                            color: OriginalColorValue().widgetBackgroundColor,
+                            color: Constant().widgetBackgroundColor,
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,

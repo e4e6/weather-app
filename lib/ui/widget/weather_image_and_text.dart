@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:test_2/original_design_value.dart';
+import 'package:test_2/constant/constant.dart';
 
 class WeatherWidget extends StatefulWidget {
   WeatherWidget(
@@ -33,7 +33,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
           ),
           Text(
             '${widget.weatherWord}',
-            style: TextStyle(fontSize: 30.w, color: OriginalColorValue().widgetTextColor),
+            style: TextStyle(fontSize: 30.w, color: Constant().widgetTextColor),
           ),
         ],
       ),
