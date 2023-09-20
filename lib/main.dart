@@ -13,7 +13,7 @@ class Main extends StatelessWidget {
   const Main({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create:(_) => TimeController()),
