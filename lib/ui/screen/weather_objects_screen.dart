@@ -34,7 +34,7 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                   children: [
                     TemperatureWidget(
                         temperature:
-                            Provider.of<GetWeatherDataVariablesController>(_)
+                          getWeatherDataVariablesControllerRead
                                 .weatherItems
                                 .temperature),
                     SizedBox(height: 10.h),

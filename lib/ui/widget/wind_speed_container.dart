@@ -4,7 +4,6 @@ import 'package:test_2/constant/constant.dart';
 
 class WindSpeedWidget extends StatefulWidget {
   WindSpeedWidget({super.key, required this.windSpeed});
-
   double windSpeed = 0;
 
   @override
