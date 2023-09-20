@@ -19,7 +19,7 @@ class WeatherVariablesScreen extends StatefulWidget {
 
 class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Column(
       children: [
         Column(
@@ -28,12 +28,12 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
               children: [
                 Column(
                   children: [
-                    TemperatureWidget(temperature: Provider.of<GetWeatherDataVariablesController>(context).weatherItems.temperature),
+                    TemperatureWidget(temperature: Provider.of<GetWeatherDataVariablesController>(_).weatherItems.temperature),
                     SizedBox(height: 10.h),
                     InkWell(
                       onTap: () {
-                        Provider.of<GetWeatherDataVariablesController>(context,listen:false).updateGetWeatherDataVariablesModel();
-                        Provider.of<TimeController>(context,listen:false).updatePresentTimeModel();
+                        Provider.of<GetWeatherDataVariablesController>(_,listen:false).updateGetWeatherDataVariablesModel();
+                        Provider.of<TimeController>(_,listen:false).updatePresentTimeModel();
                       },
                       child: Container(
                           width: 140.sp,
@@ -46,7 +46,7 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                '${Provider.of<GetWeatherDataVariablesController>(context).weatherItems.location}',
+                                '${Provider.of<GetWeatherDataVariablesController>(_).weatherItems.location}',
                                 style: TextStyle(fontSize: 25.sp),
                               ),
                               Icon(Icons.location_on, size: 30.sp),
@@ -57,8 +57,8 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                 ),
                 SizedBox(height: 20.h, width: 20.w),
                 WeatherWidget(
-                    weatherWord: '${Provider.of<GetWeatherDataVariablesController>(context).weatherItems.word}',
-                    weatherImage: '${Provider.of<GetWeatherDataVariablesController>(context).weatherItems.image}'),
+                    weatherWord: '${Provider.of<GetWeatherDataVariablesController>(_).weatherItems.word}',
+                    weatherImage: '${Provider.of<GetWeatherDataVariablesController>(_).weatherItems.image}'),
               ],
             ),
           ],
@@ -67,9 +67,9 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            WindSpeedWidget(windSpeed: Provider.of<GetWeatherDataVariablesController>(context).weatherItems.windSpeed),
+            WindSpeedWidget(windSpeed: Provider.of<GetWeatherDataVariablesController>(_).weatherItems.windSpeed),
             SizedBox(height: 20.h, width: 20.w),
-            HumidityWidget(humidity: Provider.of<GetWeatherDataVariablesController>(context).weatherItems.humidity),
+            HumidityWidget(humidity: Provider.of<GetWeatherDataVariablesController>(_).weatherItems.humidity),
           ],
         ),
         SizedBox(height: 20.h),

@@ -15,7 +15,7 @@ class WeatherWidget extends StatefulWidget {
 
 class _WeatherWidgetState extends State<WeatherWidget> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Container(
       width: 140.w,
       child: Column(

@@ -14,7 +14,7 @@ class TimeWidget extends StatefulWidget {
 
 class _TimeWidgetState extends State<TimeWidget> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Text(
       '${widget.hour}:${widget.minute}',
       style: TextStyle(fontSize: 40.sp, color: OriginalColorValue().widgetTextColor),

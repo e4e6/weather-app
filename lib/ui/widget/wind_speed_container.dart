@@ -13,7 +13,7 @@ class WindSpeedWidget extends StatefulWidget {
 
 class _WindSpeedWidgetState extends State<WindSpeedWidget> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Container(
         width: 140.w,
         height: 120.h,

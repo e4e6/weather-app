@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Scaffold(
         body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -42,14 +42,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                       children: [
                         Text(
-                          '${Provider.of<TimeController>(context).presentTimeModel.year} , ${Provider.of<TimeController>(context).presentTimeModel.month} , ${Provider.of<TimeController>(context).presentTimeModel.day}',
+                          '${Provider.of<TimeController>(_).presentTimeModel.year} , ${Provider.of<TimeController>(_).presentTimeModel.month} , ${Provider.of<TimeController>(context).presentTimeModel.day}',
                           style:
                               TextStyle(fontSize: 25.sp, color: OriginalColorValue().widgetTextColor),
                         ),
                         TimeWidget(
-                            hour: Provider.of<TimeController>(context)
+                            hour: Provider.of<TimeController>(_)
                                 .presentTimeModel.hour,
-                            minute: Provider.of<TimeController>(context)
+                            minute: Provider.of<TimeController>(_)
                                 .presentTimeModel.minute)
                       ],
                     )),

@@ -13,7 +13,7 @@ class HumidityWidget extends StatefulWidget {
 
 class _HumidityWidgetState extends State<HumidityWidget> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Container(
         width: 140.w,
         height: 120.h,

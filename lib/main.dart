@@ -16,8 +16,8 @@ class Main extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create:(context) => TimeController()),
-        ChangeNotifierProvider(create: (context)=> GetWeatherDataVariablesController(),)
+        ChangeNotifierProvider(create:(_) => TimeController()),
+        ChangeNotifierProvider(create: (_)=> GetWeatherDataVariablesController(),)
       ],
       child: ScreenUtilInit(
           designSize: const Size(360, 640),

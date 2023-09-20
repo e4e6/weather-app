@@ -13,7 +13,7 @@ class TemperatureWidget extends StatefulWidget {
 
 class _TemperatureWidgetState extends State<TemperatureWidget> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Text(
       '${widget.temperature}°',
       style: TextStyle(fontSize: 60.w, color: OriginalColorValue().widgetTextColor),
