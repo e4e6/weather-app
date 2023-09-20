@@ -1,16 +1,19 @@
 import 'package:flutter/foundation.dart';
-import 'package:test_2/data/api/api.dart';
+import 'package:test_2/data/API/location_API.dart';
+import 'package:test_2/data/API/weather_API.dart';
 import 'package:test_2/data/model/get_weather_data_variables_model/get_weather_data_variables_model.dart';
 
+
 class GetWeatherDataVariablesController with ChangeNotifier {
-  var api = Api();
+  var weatherAPI = WeatherAPI();
+  var locationAPI= LocationAPI();
 
   Future<GetWeatherDataVariablesModel> getWeatherDataVariables() async {
-    var myLocation = await api.getMyCurrentLocationData();
+    var myLocation = await locationAPI.getMyCurrentLocationData();
     var myLatitude = myLocation.myLatitude;
     var myLongitude = myLocation.myLongitude;
 
-    Map<String, dynamic> jsonData = await api.getCurrentWeatherData(
+    Map<String, dynamic> jsonData = await weatherAPI.getCurrentWeatherData(
         myLatitude: myLatitude, myLongitude: myLongitude);
 
     return GetWeatherDataVariablesModel(

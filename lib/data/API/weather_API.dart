@@ -1,22 +1,9 @@
 import 'package:dio/dio.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:test_2/constant/constant.dart';
-import 'package:test_2/data/model/get_my_current_location_model/get_my_current_location_model.dart';
 
-class Api {
+class WeatherAPI {
   final dio = Dio();
   final constant = Constant();
-
-  Future<GetMyCurrentLocationModel> getMyCurrentLocationData() async {
-    try {
-      Position position = await Geolocator.getCurrentPosition(
-          desiredAccuracy: LocationAccuracy.high);
-      return GetMyCurrentLocationModel(
-          myLatitude: position.latitude, myLongitude: position.longitude);
-    } catch (e) {
-      return Future.error(e);
-    }
-  }
 
   Future<Map<String, dynamic>> getCurrentWeatherData(
       {required double myLatitude, required double myLongitude}) async {
