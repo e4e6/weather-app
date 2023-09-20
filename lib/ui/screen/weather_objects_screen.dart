@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -55,11 +58,16 @@ class _WeatherObjectsScreenState extends State<WeatherVariablesScreen> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(
-                                '${getWeatherDataVariablesControllerRead.weatherItems.location}',
-                                style: TextStyle(fontSize: 25.sp),
-                              ),
                               Icon(Icons.location_on, size: 30.sp),
+                              SizedBox(width: 10.w),
+                              Expanded(
+                                child: AutoSizeText(
+                                  getWeatherDataVariablesControllerRead.weatherItems.location,
+                                  style: TextStyle(fontSize: 30.0),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
                             ],
                           )),
                     ),
