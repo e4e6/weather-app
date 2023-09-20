@@ -7,12 +7,15 @@ class WeatherAPI {
 
   Future<Map<String, dynamic>> getCurrentWeatherData(
       {required double myLatitude, required double myLongitude}) async {
-    Response response = await dio.get(
-        'https://api.openweathermap.org/data/2.5/weather?lat=$myLatitude&lon=$myLongitude&appid=${Constant.presentWeatherApiKey}');
-    if (response.statusCode == 200) {
-      Map<String, dynamic> jsonData = response.data;
-      return jsonData;
+    try{
+        Response response = await dio.get(
+          'https://api.openweathermap.org/data/2.5/weather?lat=$myLatitude&lon=$myLongitude&appid=${Constant.presentWeatherApiKey}');
+      if (response.statusCode == 200) {
+        Map<String, dynamic> jsonData = response.data;
+        return jsonData;
+      }throw ('statusCode: ${response.statusCode}');
+    }catch(e){
+      throw ('error at weather_API try-catch');
     }
-    throw ('statusCode: ${response.statusCode}');
   }
 }
